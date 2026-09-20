@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>G. Pedro Homeowners Neighborhood Association — Brgy. New Zaniga, Mandaluyong</title>
+<meta name="description" content="Official website of the G. Pedro Homeowners Neighborhood Association, Barangay New Zaniga, Mandaluyong City." />
+<link rel="icon" href="logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1c3a5e;
+    --navy-deep:#122840;
+    --green:#2e6b3e;
+    --green-deep:#204c2c;
+    --gold:#c9a227;
+    --cream:#eaf1fb;
+    --gold-tint:#fdf3d6;
+    --paper:#ffffff;
+    --ink:#20261f;
+    --ink-soft:#4b5650;
+    --line:#e2ded2;
+    --radius:4px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3,h4{
+    font-family:'Source Serif 4', serif;
+    color:var(--navy-deep);
+    margin:0 0 .4em;
+    line-height:1.2;
+  }
+  a{color:var(--green-deep);}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+
+  /* ===== Top bar ===== */
+  .topbar{
+    background:var(--navy-deep);
+    color:#dfe6ee;
+    font-size:.82rem;
+  }
+  .topbar .wrap{display:flex; justify-content:space-between; align-items:center; padding:6px 24px; flex-wrap:wrap; gap:6px;}
+  .topbar a{color:#dfe6ee; text-decoration:none;}
+  .topbar a:hover{color:var(--gold);}
+  .topbar .hotline{color:var(--gold); font-weight:600;}
+
+  /* ===== Header ===== */
+  header.site{
+    background:var(--navy);
+    border-bottom:4px solid var(--gold);
+  }
+  .header-inner{
+    display:flex; align-items:center; gap:18px;
+    padding:16px 24px;
+  }
+  .header-inner img.seal{width:64px; height:auto; flex-shrink:0;}
+  .header-titles h1{
+    color:#fff; font-size:1.35rem; margin:0; letter-spacing:.2px;
+  }
+  .header-titles p{
+    color:#c7d4e3; margin:2px 0 0; font-size:.85rem; font-family:'Inter';
+  }
+
+  /* ===== Nav ===== */
+  nav.mainnav{
+    background:var(--navy-deep);
+  }
+  nav.mainnav .wrap{display:flex; align-items:stretch; flex-wrap:wrap;}
+  nav.mainnav a.toplink, nav.mainnav details summary{
+    display:flex; align-items:center; gap:6px;
+    color:#eef2f6; text-decoration:none;
+    padding:13px 18px; font-weight:600; font-size:.92rem;
+    cursor:pointer; list-style:none; user-select:none;
+    border-right:1px solid rgba(255,255,255,.08);
+  }
+  nav.mainnav summary::-webkit-details-marker{display:none;}
+  nav.mainnav a.toplink:hover, nav.mainnav details summary:hover{
+    background:var(--navy); color:var(--gold);
+  }
+  nav.mainnav details{position:relative;}
+  nav.mainnav details[open] summary{background:var(--navy); color:var(--gold);}
+  .caret{font-size:.65em; transform:translateY(1px);}
+  .dropdown{
+    position:absolute; top:100%; left:0; min-width:230px;
+    background:var(--paper); border:1px solid var(--line);
+    box-shadow:0 10px 24px rgba(0,0,0,.15);
+    z-index:40; padding:6px 0;
+  }
+  .dropdown a{
+    display:block; padding:9px 18px; color:var(--ink); text-decoration:none;
+    font-size:.9rem; border-left:3px solid transparent;
+  }
+  .dropdown a:hover{background:#f1f6f1; border-left-color:var(--green); color:var(--green-deep);}
+  .dropdown .sub-label{
+    display:block; padding:8px 18px 2px; font-size:.72rem; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-soft);
+  }
+
+  /* ===== Hero (home) ===== */
+  .hero{
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 70%);
+    color:#eef2f6; position:relative; overflow:hidden;
+  }
+  .hero .wrap{display:flex; align-items:center; gap:44px; padding:56px 24px 48px; flex-wrap:wrap;}
+  .hero-seal{width:180px; flex-shrink:0;}
+  .hero-seal img{width:100%; filter:drop-shadow(0 8px 20px rgba(0,0,0,.35));}
+  .hero-text{flex:1; min-width:280px;}
+  .hero-text .eyebrow{color:var(--gold); font-weight:600; font-size:.85rem; margin-bottom:8px; display:block;}
+  .hero-text h1{color:#fff; font-size:2.1rem; margin-bottom:.3em; max-width:16ch;}
+  .hero-text p{color:#c7d4e3; max-width:58ch; font-size:1.02rem;}
+  .hero-cta{display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:11px 20px; border-radius:var(--radius);
+    text-decoration:none; font-weight:600; font-size:.92rem; border:2px solid transparent;
+  }
+  .btn-gold{background:var(--gold); color:var(--navy-deep);}
+  .btn-gold:hover{background:#dab538;}
+  .btn-outline{border-color:#c7d4e3; color:#eef2f6;}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* ===== Sections generic ===== */
+  main section{padding:56px 0; border-bottom:1px solid var(--line);}
+  main section:last-of-type{border-bottom:none;}
+  main section.bg-blue{background:var(--cream);}
+  main section.bg-gold{background:var(--gold-tint);}
+  .section-head{margin-bottom:28px; max-width:70ch;}
+  .section-head .kicker{color:var(--green-deep); font-weight:600; font-size:.82rem; letter-spacing:.04em;}
+  .section-head h2{font-size:1.7rem;}
+  .section-head p{color:var(--ink-soft);}
+
+  /* home quick cards */
+  .quick-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .quick-card{
+    background:var(--paper); border:1px solid var(--line); border-top:4px solid var(--green);
+    padding:22px; border-radius:var(--radius);
+  }
+  .quick-card.gold{border-top-color:var(--gold);}
+  .quick-card.navy{border-top-color:var(--navy);}
+  .quick-card h3{font-size:1.05rem; margin-bottom:.35em;}
+  .quick-card p{color:var(--ink-soft); font-size:.92rem; margin:0 0 10px;}
+  .quick-card a{font-size:.88rem; font-weight:600; text-decoration:none;}
+
+  /* ===== Year tabs ===== */
+  .year-tabs{display:flex; gap:8px; margin-bottom:26px; flex-wrap:wrap;}
+  .year-tab{
+    background:var(--paper); border:1px solid var(--line); padding:9px 20px;
+    font-weight:600; font-size:.9rem; cursor:pointer; border-radius:var(--radius);
+    color:var(--ink-soft);
+  }
+  .year-tab.active{background:var(--navy); color:#fff; border-color:var(--navy);}
+  .year-panel{display:none;}
+  .year-panel.active{display:block;}
+  .placeholder-note{
+    background:#fbf9f2; border:1px dashed var(--line); padding:18px 20px;
+    color:var(--ink-soft); font-size:.92rem; border-radius:var(--radius);
+  }
+
+  /* Quarter / month accordions */
+  .quarter{
+    border:1px solid var(--line); border-radius:var(--radius); margin-bottom:14px; background:var(--paper);
+  }
+  .quarter > summary{
+    padding:15px 20px; font-family:'Source Serif 4',serif; font-weight:600;
+    font-size:1.05rem; color:var(--navy-deep); cursor:pointer; list-style:none;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .quarter > summary::-webkit-details-marker{display:none;}
+  .quarter > summary .qcount{font-size:.78rem; font-weight:500; color:var(--ink-soft); font-family:'Inter';}
+  .quarter-body{padding:4px 20px 18px;}
+  .month{border-top:1px solid var(--line); padding:14px 0 4px;}
+  .month:first-of-type{border-top:none;}
+  .month > summary{
+    cursor:pointer; list-style:none; font-weight:600; color:var(--green-deep);
+    font-size:.98rem; padding:4px 0;
+  }
+  .month > summary::-webkit-details-marker{display:none;}
+  .month > summary::before{content:"▸ "; color:var(--gold);}
+  .month[open] > summary::before{content:"▾ "; }
+  .month-body{padding:10px 0 6px 4px;}
+  .proj-item{margin-bottom:16px;}
+  .proj-item:last-child{margin-bottom:0;}
+  .proj-item .proj-title{font-weight:600; color:var(--ink); display:block; margin-bottom:4px;}
+  .proj-item ul{margin:6px 0 0 1.1em; padding:0; color:var(--ink-soft); font-size:.94rem;}
+  .proj-item ul li{margin-bottom:3px;}
+  .empty-quarter{color:var(--ink-soft); font-size:.9rem; padding:6px 0 10px;}
+
+  .gallery-label{font-size:.85rem; font-weight:600; color:var(--navy-deep); margin:10px 0 8px;}
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:8px; margin-top:6px;
+  }
+  .gallery-grid button{
+    border:1px solid var(--line); padding:0; background:none; cursor:pointer; border-radius:2px; overflow:hidden; aspect-ratio:3/4;
+  }
+  .gallery-grid img{width:100%; height:100%; object-fit:cover; display:block;}
+  .gallery-grid button:hover img{opacity:.85;}
+
+  /* lightbox */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(10,16,24,.9); display:none;
+    align-items:center; justify-content:center; z-index:100; padding:30px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-height:85vh; max-width:90vw; border:3px solid #fff;}
+  .lightbox-close{
+    position:absolute; top:18px; right:24px; color:#fff; font-size:2rem; background:none;
+    border:none; cursor:pointer; line-height:1;
+  }
+
+  /* ===== About / officers ===== */
+  .officer-list{list-style:none; margin:0; padding:0; max-width:520px; border:1px solid var(--line); background:var(--paper); border-radius:var(--radius);}
+  .officer-list li{display:flex; justify-content:space-between; gap:16px; padding:13px 20px; border-bottom:1px solid var(--line); font-size:.95rem;}
+  .officer-list li:last-child{border-bottom:none;}
+  .officer-list .role{color:var(--ink-soft); font-weight:500;}
+  .officer-list .name{font-weight:600; text-align:right;}
+
+  /* ===== CCTV ===== */
+  .cctv-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .cctv-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px; text-align:center;
+  }
+  .cctv-card .icon{
+    width:40px; height:40px; margin:0 auto 10px; border-radius:50%; background:var(--green);
+    display:flex; align-items:center; justify-content:center; color:#fff; font-size:.85rem; font-weight:700;
+  }
+  .cctv-card h3{font-size:.98rem; margin:0 0 4px;}
+  .cctv-card p{font-size:.82rem; color:var(--ink-soft); margin:0;}
+
+  /* ===== Contact ===== */
+  .contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .contact-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+  .contact-card h3{font-size:1.02rem; margin-bottom:10px;}
+  .contact-card p{margin:0 0 6px; font-size:.92rem; color:var(--ink-soft);}
+  .contact-card .num{color:var(--ink); font-weight:600;}
+  .contact-card a.extlink{display:inline-block; margin-top:6px; font-weight:600; font-size:.9rem;}
+
+  .table-scroll{overflow-x:auto; margin-top:16px;}
+  table.data-table{width:100%; border-collapse:collapse; background:var(--paper); font-size:.9rem; min-width:520px;}
+  table.data-table th, table.data-table td{border:1px solid var(--line); padding:10px 14px; text-align:left;}
+  table.data-table thead th{background:var(--navy); color:#fff; font-weight:600; font-size:.85rem;}
+  table.data-table td.table-empty{text-align:center; color:var(--ink-soft); font-style:italic; padding:20px;}
+  table.data-table tbody tr:nth-child(even) td{background:#fbf9f2;}
+  table.data-table--wide{min-width:960px; font-size:.84rem;}
+  table.data-table--wide th, table.data-table--wide td{padding:8px 10px; white-space:nowrap;}
+  table.data-table--wide td:nth-child(2){white-space:normal; min-width:150px;}
+  table.data-table tr.group-row td{
+    background:var(--green); color:#fff; font-weight:700; font-family:'Source Serif 4',serif;
+    font-size:.92rem; padding:9px 14px;
+  }
+  table.data-table tr.total-row td{background:#fbe9c6; font-weight:700; color:var(--navy-deep);}
+  .section-note{color:var(--ink-soft); font-size:.9rem; max-width:70ch; margin-bottom:6px;}
+
+  footer{background:var(--navy-deep); color:#c7d4e3; padding:28px 0; font-size:.85rem;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;}
+  footer a{color:#c7d4e3;}
+
+  @media (max-width: 860px){
+    .quick-grid, .contact-grid{grid-template-columns:1fr;}
+    .cctv-grid{grid-template-columns:repeat(2,1fr);}
+    .hero .wrap{padding:40px 24px;}
+    .hero-text h1{font-size:1.6rem;}
+    nav.mainnav .wrap{flex-direction:column;}
+    nav.mainnav a.toplink, nav.mainnav details summary{border-right:none; border-bottom:1px solid rgba(255,255,255,.08);}
+    .dropdown{position:static; box-shadow:none; border:none; border-left:3px solid var(--green); margin-left:10px;}
+    .officer-list li{flex-direction:column; align-items:flex-start; gap:2px;}
+    .officer-list .name{text-align:left;}
+  }
+  @media (max-width: 560px){
+    .cctv-grid{grid-template-columns:1fr 1fr;}
+    .header-inner{gap:12px;}
+    .header-titles h1{font-size:1.08rem;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>G. Pedro Homeowners Neighborhood Association &middot; Brgy. New Zaniga, Mandaluyong City</span>
+    <span>Emergency: <a class="hotline" href="tel:8532-2145">Police 8532-2145</a> &nbsp;|&nbsp; <a class="hotline" href="tel:8532-2189">Fire 8532-2189</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap header-inner">
+    <img class="seal" src="logo.png" alt="G. Pedro Homeowners Neighborhood Association official seal" />
+    <div class="header-titles">
+      <h1>G. Pedro Homeowners Neighborhood Association</h1>
+      <p>Barangay New Zaniga, Mandaluyong City</p>
+    </div>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="wrap">
+    <a class="toplink" href="#home">Home</a>
+
+    <details>
+      <summary>Projects <span class="caret">▾</span></summary>
+      <div class="dropdown">
+        <a href="#projects" data-year="2024">2024</a>
+        <a href="#projects" data-year="2025">2025</a>
+        <a href="#projects" data-year="2026">2026</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>CCTV Location <span class="caret">▾</span></summary>
+      <div class="dropdown">
+        <a href="#cctv">Gate1</a>
+        <a href="#cctv">Gate2</a>
+        <a href="#cctv">Oney1</a>
+        <a href="#cctv">Oney2</a>
+        <a href="#cctv">Jac</a>
+        <a href="#cctv">Ela</a>
+        <a href="#cctv">Remy</a>
+      </div>
+    </details>
+
+    <a class="toplink" href="#gpedro-street">G. Pedro Street</a>
+
+    <details>
+      <summary>HOA Dues <span class="caret">▾</span></summary>
+      <div class="dropdown">
+        <a href="#hoa-dues" data-duestab="payment">Member Payment</a>
+        <a href="#hoa-dues" data-duestab="expenses">Expenses</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>About Us <span class="caret">▾</span></summary>
+      <div class="dropdown">
+        <a href="#about" data-ayear="2024">2024 Officers</a>
+        <a href="#about" data-ayear="2025">2025 Officers</a>
+        <a href="#about" data-ayear="2026">2026 Officers</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>Contact Us <span class="caret">▾</span></summary>
+      <div class="dropdown">
+        <a href="#contact">Office Address</a>
+        <a href="#contact">Emergency Hotlines</a>
+        <a href="https://mandaluyong.gov.ph/government/barangays/barangay-new-zaniga/" target="_blank" rel="noopener">Brgy. New Zaniga Official Site ↗</a>
+      </div>
+    </details>
+  </div>
+</nav>
+
+<main>
+
+
+  <!-- ========== HOME ========== -->
+  <section id="home" class="hero">
+    <div class="wrap">
+      <div class="hero-seal"><img src="logo.png" alt="G. Pedro Homeowners Neighborhood Association seal" /></div>
+      <div class="hero-text">
+        <span class="eyebrow">Welcome</span>
+        <h1>Serving the homeowners of G. Pedro Street since day one.</h1>
+        <p>A neighborhood association working with Barangay New Zaniga to keep our streets safe, clean, and well looked after — from security and lighting to drainage and community support.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#projects">See our projects</a>
+          <a class="btn btn-outline" href="#contact">Contact the HOA</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="home-quick" class="bg-blue" style="padding-top:48px;">
+    <div class="wrap">
+      <div class="quick-grid">
+        <div class="quick-card">
+          <h3>Latest project</h3>
+          <p>Trees along G. Pedro Street were trimmed in June 2026 ahead of typhoon season, keeping power lines and walkways clear.</p>
+          <a href="#projects">View 2026 projects →</a>
+        </div>
+        <div class="quick-card gold">
+          <h3>2026 Officers</h3>
+          <p>Meet the current set of HOA officers serving the association this year, led by President Mako Dizon.</p>
+          <a href="#about">Meet the officers →</a>
+        </div>
+        <div class="quick-card navy">
+          <h3>Emergency numbers</h3>
+          <p>Police, fire, hospital, and disaster hotlines for Mandaluyong City, on hand when you need them.</p>
+          <a href="#contact">Get emergency numbers →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="bg-gold">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Projects</span>
+        <h2>What the association has been working on</h2>
+        <p>Browse HOA projects and community initiatives by year. 2026 is broken down by quarter and month.</p>
+      </div>
+
+      <div class="year-tabs" data-group="projects">
+        <button class="year-tab" data-year="2024">2024</button>
+        <button class="year-tab" data-year="2025">2025</button>
+        <button class="year-tab active" data-year="2026">2026</button>
+      </div>
+
+      <div class="year-panel" data-group="projects" data-year="2024">
+        <p class="placeholder-note">Project records for 2024 will be added here soon.</p>
+      </div>
+      <div class="year-panel" data-group="projects" data-year="2025">
+        <p class="placeholder-note">Project records for 2025 will be added here soon.</p>
+      </div>
+
+      <div class="year-panel active" data-group="projects" data-year="2026">
+
+        <!-- Q1 -->
+        <details class="quarter" open>
+          <summary>1st Quarter <span class="qcount">January – March</span></summary>
+          <div class="quarter-body">
+
+            <details class="month">
+              <summary>January</summary>
+              <div class="month-body">
+                <div class="proj-item">
+                  <span class="proj-title">1. CCTV Repair under Ela's location</span>
+                  To improve monitoring and security in the area.
+                </div>
+                <div class="proj-item">
+                  <span class="proj-title">2. Installation of signages in G. Pedro Street</span>
+                  <ul>
+                    <li>CCTV Monitoring</li>
+                    <li>Proper Garbage Disposal</li>
+                    <li>Dog Waste Responsibility signs</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <details class="month">
+              <summary>February</summary>
+              <div class="month-body">
+                <div class="proj-item">
+                  <span class="proj-title">1. Walkie talkie units acquired (4 units)</span>
+                  Provided new communication devices to enhance coordination among officers and security personnel.
+                </div>
+                <div class="proj-item">
+                  <span class="proj-title">2. Installation of 8 solar street lights</span>
+                  Solar-powered lighting installed to improve nighttime visibility and enhance safety across key areas of the street.
+                </div>
+              </div>
+            </details>
+
+            <details class="month">
+              <summary>March</summary>
+              <div class="month-body">
+                <div class="proj-item">
+                  <span class="proj-title">1. GPHOA assistance &amp; support for Ms. Mary Grace "Hapi" Petrolla</span>
+                  <ul>
+                    <li>Donation of a wheelchair by Kuya Al (former president), loaned to Hapi but remaining HOA property for shared use</li>
+                    <li>Neighbor solicitation drive to gather financial help for Hapi's medical needs</li>
+                    <li>HOA officers' continuing support, including planned visitation and prayer offering</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </details>
+
+        <!-- Q2 -->
+        <details class="quarter" open>
+          <summary>2nd Quarter <span class="qcount">April – June</span></summary>
+          <div class="quarter-body">
+
+            <details class="month">
+              <summary>April</summary>
+              <div class="month-body">
+                <div class="proj-item">
+                  <span class="proj-title">1. Assistance to Kuya Noli for his funeral</span>
+                </div>
+                <div class="proj-item">
+                  <span class="proj-title">2. Drainage cleaning along G. Pedro Street</span>
+                  In coordination with Brgy. New Zaniga, in preparation for the upcoming rainy season.
+                </div>
+              </div>
+            </details>
+
+            <details class="month">
+              <summary>May</summary>
+              <div class="month-body">
+                <div class="proj-item">
+                  <span class="proj-title">1. Assistance to Ate Lilibeth (wife of David Pantalla) for her funeral</span>
+                </div>
+              </div>
+            </details>
+
+            <details class="month">
+              <summary>June</summary>
+              <div class="month-body">
+                <div class="proj-item">
+                  <span class="proj-title">1. Assistance to Hapi for her funeral</span>
+                </div>
+                <div class="proj-item">
+                  <span class="proj-title">2. Trees trimming in preparation for typhoon</span>
+                  <ul>
+                    <li>Location: G. Pedro Street</li>
+                  </ul>
+                  <p class="gallery-label">Cleaning pictures</p>
+                  <div class="gallery-grid" id="gpedro-gallery">
+                    <!-- images injected by JS -->
+                  </div>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </details>
+
+        <!-- Q3 -->
+        <details class="quarter">
+          <summary>3rd Quarter <span class="qcount">July – September</span></summary>
+          <div class="quarter-body">
+            <p class="empty-quarter">No project records yet for this quarter.</p>
+          </div>
+        </details>
+
+        <!-- Q4 -->
+        <details class="quarter">
+          <summary>4th Quarter <span class="qcount">October – December</span></summary>
+          <div class="quarter-body">
+            <p class="empty-quarter">No project records yet for this quarter.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CCTV LOCATION ========== -->
+  <section id="cctv" class="bg-blue">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">CCTV Location</span>
+        <h2>Camera coverage points</h2>
+        <p>These are the current monitored points along and around G. Pedro Street.</p>
+      </div>
+      <div class="cctv-grid">
+        <div class="cctv-card"><div class="icon">1</div><h3>Gate1</h3><p>Entry gate camera</p></div>
+        <div class="cctv-card"><div class="icon">2</div><h3>Gate2</h3><p>Entry gate camera</p></div>
+        <div class="cctv-card"><div class="icon">3</div><h3>Oney1</h3><p>Street coverage</p></div>
+        <div class="cctv-card"><div class="icon">4</div><h3>Oney2</h3><p>Street coverage</p></div>
+        <div class="cctv-card"><div class="icon">5</div><h3>Jac</h3><p>Street coverage</p></div>
+        <div class="cctv-card"><div class="icon">6</div><h3>Ela</h3><p>Street coverage</p></div>
+        <div class="cctv-card"><div class="icon">7</div><h3>Remy</h3><p>Street coverage</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== G. PEDRO STREET ========== -->
+  <section id="gpedro-street" class="bg-gold">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">6. G. Pedro Street</span>
+        <h2>Street clearing &amp; cleanliness</h2>
+        <p>Photos from the tree trimming and street clearing done along G. Pedro Street, in preparation for typhoon season.</p>
+      </div>
+      <p class="gallery-label">Cleaning pictures</p>
+      <div class="gallery-grid" id="gpedro-street-gallery">
+        <!-- images injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOA DUES ========== -->
+  <section id="hoa-dues" class="bg-blue">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">7. HOA Dues</span>
+        <h2>Member payments &amp; expenses</h2>
+        <p>Financial records for the association, drawn from the HOA's Master List and Expenses records.</p>
+      </div>
+
+      <div class="year-tabs" data-group="dues">
+        <button class="year-tab active" data-duestab="payment">Member Payment</button>
+        <button class="year-tab" data-duestab="expenses">Expenses</button>
+      </div>
+
+      <div class="year-panel active" data-group="dues" data-duestab="payment">
+        <p class="section-note">Monthly dues collected per household, from the "MasterList 2026" tab. Amounts shown are what was recorded paid for that month; "Free" marks a waived month, and "Complete" shows the date a homeowner finished paying for the year.</p>
+        <div class="table-scroll">
+          <table class="data-table data-table--wide" id="payment-table">
+            <thead>
+              <tr>
+                <th>Unit No.</th><th>Name</th>
+                <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th>
+                <th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
+                <th>Complete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group-row"><td colspan="15">Homeowners</td></tr>
+              <tr><td>302</td><td>Fely Santos</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Mar 3, 2026</td></tr>
+              <tr><td>303</td><td>Joy/Jovy Santos</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Nestor Delos Santos</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>304</td><td>Maan Matubang</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td>Jan 22, 2026</td></tr>
+              <tr><td>305</td><td>Jacques Brown Santos</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>306</td><td>Robby Navarro</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Sep 3, 2026</td></tr>
+              <tr><td></td><td>Jeffrey Jardenico</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 4, 2026</td></tr>
+              <tr><td></td><td>Mako Dizon</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 22, 2026</td></tr>
+              <tr><td>309</td><td>Vinia Mendez</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Feb 8, 2026</td></tr>
+              <tr><td>311</td><td>Oj Paulino</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Ella Licuanan</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>312</td><td>Nelia Hernandez</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td></td><td>Jan 22, 2026</td></tr>
+              <tr><td>313</td><td>Doc John Cusi</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Mar 9, 2026</td></tr>
+              <tr><td>314</td><td>Roy Judan</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 22, 2026</td></tr>
+              <tr><td>315</td><td>Celia Paulino</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Feb 19, 2026</td></tr>
+              <tr><td></td><td>Ronald Famy</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 4, 2026</td></tr>
+              <tr><td>316</td><td>Al Judan</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 4, 2026</td></tr>
+              <tr><td></td><td>Romy Abobo</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>317</td><td>Franco Abella</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 5, 2026</td></tr>
+              <tr><td>318</td><td>Doc Benj Sanchez</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Feb 10, 2026</td></tr>
+              <tr><td>319</td><td>Atty Ed Abelia</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 5, 2026</td></tr>
+              <tr><td>320</td><td>Christina Villegas</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td>Jan 19, 2026</td></tr>
+              <tr><td>325</td><td>Liza Anza</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>432</td><td>Lyn Pernia</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr class="total-row"><td colspan="2">Total collected — Homeowners</td><td>₱5,700</td><td>₱5,700</td><td>₱5,700</td><td>₱5,700</td><td>₱5,400</td><td>₱5,400</td><td>₱5,100</td><td>₱5,100</td><td>₱4,800</td><td>₱4,200</td><td>₱3,900</td><td>₱300</td><td></td></tr>
+              <tr class="group-row"><td colspan="15">Tenants</td></tr>
+              <tr><td>302</td><td>Jennie Chan</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Derek Mendoza</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Angie Santiago</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>303</td><td>Roland De Chavez</td><td></td><td></td><td></td><td></td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Maritess Purgatorio</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Neng Miranda</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Darren Villar</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>305</td><td>Kevin Iraci</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Mary grace Petrolla</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Cynthia Brown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>315</td><td>Richie Santos</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Jan 24, 2026</td></tr>
+              <tr><td>432</td><td>Ruby Villa</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td></tr>
+              <tr><td></td><td>Richard Barangan</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>no</td><td>Lim, Chuang Yeh</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>no</td><td>Marvin Lee</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>no</td><td>Edna Omaga</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>Norvin Villa</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>Free</td><td>Jan 22, 2026</td></tr>
+              <tr class="total-row"><td colspan="2">Total collected — Tenants</td><td>₱2,200</td><td>₱1,800</td><td>₱1,800</td><td>₱1,600</td><td>₱1,800</td><td>₱1,800</td><td>₱1,600</td><td>₱1,400</td><td>₱1,000</td><td>₱400</td><td>₱400</td><td>₱200</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="year-panel" data-group="dues" data-duestab="expenses">
+        <p class="section-note">Expenses recorded per month, from the "Expenses" tab (remarks noted outside that table are not included here).</p>
+        <div class="table-scroll">
+          <table class="data-table data-table--wide" id="expenses-table">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th>
+                <th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Peter Salary</td><td>₱2,750</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td>₱2,750</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>CCTV JM Maintenance</td><td>₱1,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Sticker Print 3pcs</td><td>₱320</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Sintra and Printing</td><td>₱2,143</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>1pc Tarp</td><td>₱108</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>4set of walkie talkie</td><td>₱1,199</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>5 pcs walis tinging</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Solar 8pcs</td><td></td><td>₱10,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Tie Wrap</td><td></td><td>₱259</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Tie Wrap</td><td></td><td>₱259</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Meryenda, Pay & Wel Rod (Oni & Peter)</td><td></td><td>₱1,500</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Hapi helps</td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Walis Peter</td><td></td><td></td><td></td><td>₱40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Funeral Kuya Noli</td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Funeral asawa kuya Joji</td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Funeral Kuya Hapi</td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Walis Peter</td><td></td><td></td><td></td><td></td><td></td><td>₱50</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Mass, food, fruits, candle</td><td></td><td></td><td></td><td></td><td></td><td>₱4,406</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Mako abuno sa trimming</td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱1,000</td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Snacks with the trimming</td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱741</td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Walis Peter</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱50</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>SubMeter</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱300</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td></tr>
+              <tr><td>Walis Peter</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱100</td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td></tr>
+              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td></tr>
+              <tr class="total-row"><td>Total expenses</td><td>₱10,470</td><td>₱18,018</td><td>₱9,000</td><td>₱9,040</td><td>₱9,000</td><td>₱13,456</td><td>₱7,741</td><td>₱6,350</td><td>₱6,100</td><td>₱6,000</td><td>₱6,000</td><td>₱6,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT US ========== -->
+  <section id="about" class="bg-gold">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">About Us</span>
+        <h2>HOA officers, by year</h2>
+        <p>The volunteers who have served the association's board over the years.</p>
+      </div>
+
+      <div class="year-tabs" data-group="about">
+        <button class="year-tab" data-ayear="2024">2024</button>
+        <button class="year-tab" data-ayear="2025">2025</button>
+        <button class="year-tab active" data-ayear="2026">2026</button>
+      </div>
+
+      <div class="year-panel" data-group="about" data-ayear="2024">
+        <p class="placeholder-note">2024 officer records will be added here soon.</p>
+      </div>
+      <div class="year-panel" data-group="about" data-ayear="2025">
+        <p class="placeholder-note">2025 officer records will be added here soon.</p>
+      </div>
+
+      <div class="year-panel active" data-group="about" data-ayear="2026">
+        <ul class="officer-list">
+          <li><span class="role">President</span><span class="name">Mako Dizon</span></li>
+          <li><span class="role">Vice President</span><span class="name">Richard Barangan</span></li>
+          <li><span class="role">Treasurer</span><span class="name">Jeffrey Jardenico</span></li>
+          <li><span class="role">Auditor</span><span class="name">Norvin Villa</span></li>
+          <li><span class="role">Secretary</span><span class="name">Jennie Chan</span></li>
+          <li><span class="role">Sergeant-at-Arms</span><span class="name">David Pantalla<br>Ronie Ymaf</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT US ========== -->
+  <section id="contact" class="bg-blue">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Contact Us</span>
+        <h2>Get in touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Office Address</h3>
+          <p>735 Ballesteros Street corner I. Lopez Street,<br>Barangay New Zaniga, Mandaluyong City</p>
+          <p class="num">8533-5138 / 8532-0725</p>
+        </div>
+        <div class="contact-card">
+          <h3>Mandaluyong City Emergency Hotlines</h3>
+          <p>Police: <span class="num">8532-2145</span></p>
+          <p>Fire: <span class="num">8532-2189</span></p>
+          <p>Hospital: <span class="num">8539-5500</span></p>
+          <p>Disaster / Rescue: <span class="num">8533-2225</span></p>
+        </div>
+        <div class="contact-card">
+          <h3>City of Mandaluyong</h3>
+          <p>Visit Barangay New Zaniga's official page on the Mandaluyong City government site.</p>
+          <a class="extlink" href="https://mandaluyong.gov.ph/government/barangays/barangay-new-zaniga/" target="_blank" rel="noopener">Visit official site ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> G. Pedro Homeowners Neighborhood Association — Brgy. New Zaniga, Mandaluyong City</span>
+    <span><a href="#home">Back to top ↑</a></span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---- Year-tab switching (Projects + About, keyed by data-group) ----
+  function wireTabs(group, attr){
+    const tabs = document.querySelectorAll('.year-tab[data-group="' + group + '"], .year-tabs[data-group="' + group + '"] .year-tab');
+  }
+
+  function setupTabGroup(groupSelectorTabs, groupSelectorPanels, attrName){
+    const tabs = document.querySelectorAll(groupSelectorTabs);
+    const panels = document.querySelectorAll(groupSelectorPanels);
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const val = tab.getAttribute(attrName);
+        tabs.forEach(t => t.classList.toggle('active', t === tab));
+        panels.forEach(p => p.classList.toggle('active', p.getAttribute(attrName) === val));
+      });
+    });
+    return {tabs, panels, attrName};
+  }
+
+  const projectTabs = setupTabGroup('.year-tabs[data-group="projects"] .year-tab', '.year-panel[data-group="projects"]', 'data-year');
+  const aboutTabs = setupTabGroup('.year-tabs[data-group="about"] .year-tab', '.year-panel[data-group="about"]', 'data-ayear');
+  const duesTabs = setupTabGroup('.year-tabs[data-group="dues"] .year-tab', '.year-panel[data-group="dues"]', 'data-duestab');
+
+  function activate(tabsObj, value){
+    tabsObj.tabs.forEach(t => t.classList.toggle('active', t.getAttribute(tabsObj.attrName) === value));
+    tabsObj.panels.forEach(p => p.classList.toggle('active', p.getAttribute(tabsObj.attrName) === value));
+  }
+
+  // ---- Dropdown nav links: select the right year tab, close menu, then scroll ----
+  document.querySelectorAll('.dropdown a[data-year]').forEach(link => {
+    link.addEventListener('click', () => {
+      activate(projectTabs, link.getAttribute('data-year'));
+      closeAllMenus();
+    });
+  });
+  document.querySelectorAll('.dropdown a[data-ayear]').forEach(link => {
+    link.addEventListener('click', () => {
+      activate(aboutTabs, link.getAttribute('data-ayear'));
+      closeAllMenus();
+    });
+  });
+  document.querySelectorAll('.dropdown a[data-duestab]').forEach(link => {
+    link.addEventListener('click', () => {
+      activate(duesTabs, link.getAttribute('data-duestab'));
+      closeAllMenus();
+    });
+  });
+  document.querySelectorAll('.dropdown a:not([data-year]):not([data-ayear]):not([data-duestab])').forEach(link => {
+    link.addEventListener('click', () => { closeAllMenus(); });
+  });
+
+  function closeAllMenus(){
+    document.querySelectorAll('nav.mainnav details[open]').forEach(d => d.removeAttribute('open'));
+  }
+
+  // Close other open nav dropdowns when one opens
+  document.querySelectorAll('nav.mainnav details').forEach(d => {
+    d.addEventListener('toggle', () => {
+      if(d.open){
+        document.querySelectorAll('nav.mainnav details').forEach(other => {
+          if(other !== d) other.removeAttribute('open');
+        });
+      }
+    });
+  });
+
+  // Click outside nav closes dropdowns
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('nav.mainnav')){
+      closeAllMenus();
+    }
+  });
+
+  // ---- G. Pedro Street cleaning gallery ----
+  const galleryImages = Array.from({length: 11}, (_, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return 'gpedro-' + n + '.jpg';
+  });
+  function buildGallery(containerId){
+    const el = document.getElementById(containerId);
+    if(!el) return;
+    galleryImages.forEach((src, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'View G. Pedro Street photo ' + (idx + 1));
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'G. Pedro Street, tree trimming and street clearing, photo ' + (idx + 1);
+      img.loading = 'lazy';
+      btn.appendChild(img);
+      btn.addEventListener('click', () => openLightbox(src, img.alt));
+      el.appendChild(btn);
+    });
+  }
+  buildGallery('gpedro-gallery');
+  buildGallery('gpedro-street-gallery');
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('open');
+  }
+  document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') lightbox.classList.remove('open'); });
+</script>
+
+</body>
+</html>
