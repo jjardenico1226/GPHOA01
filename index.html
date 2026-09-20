@@ -16,7 +16,7 @@
     --green:#2e6b3e;
     --green-deep:#204c2c;
     --gold:#c9a227;
-    --cream:#eaf1fb;
+    --cream:#eaf6ec;
     --gold-tint:#fdf3d6;
     --paper:#ffffff;
     --ink:#20261f;
@@ -133,7 +133,7 @@
   /* ===== Sections generic ===== */
   main section{padding:56px 0; border-bottom:1px solid var(--line);}
   main section:last-of-type{border-bottom:none;}
-  main section.bg-blue{background:var(--cream);}
+  main section.bg-green{background:var(--cream);}
   main section.bg-gold{background:var(--gold-tint);}
   .section-head{margin-bottom:28px; max-width:70ch;}
   .section-head .kicker{color:var(--green-deep); font-weight:600; font-size:.82rem; letter-spacing:.04em;}
@@ -246,21 +246,31 @@
   .contact-card .num{color:var(--ink); font-weight:600;}
   .contact-card a.extlink{display:inline-block; margin-top:6px; font-weight:600; font-size:.9rem;}
 
-  .table-scroll{overflow-x:auto; margin-top:16px;}
-  table.data-table{width:100%; border-collapse:collapse; background:var(--paper); font-size:.9rem; min-width:520px;}
-  table.data-table th, table.data-table td{border:1px solid var(--line); padding:10px 14px; text-align:left;}
-  table.data-table thead th{background:var(--navy); color:#fff; font-weight:600; font-size:.85rem;}
-  table.data-table td.table-empty{text-align:center; color:var(--ink-soft); font-style:italic; padding:20px;}
-  table.data-table tbody tr:nth-child(even) td{background:#fbf9f2;}
-  table.data-table--wide{min-width:960px; font-size:.84rem;}
-  table.data-table--wide th, table.data-table--wide td{padding:8px 10px; white-space:nowrap;}
-  table.data-table--wide td:nth-child(2){white-space:normal; min-width:150px;}
-  table.data-table tr.group-row td{
-    background:var(--green); color:#fff; font-weight:700; font-family:'Source Serif 4',serif;
-    font-size:.92rem; padding:9px 14px;
-  }
-  table.data-table tr.total-row td{background:#fbe9c6; font-weight:700; color:var(--navy-deep);}
   .section-note{color:var(--ink-soft); font-size:.9rem; max-width:70ch; margin-bottom:6px;}
+  .section-divider{border:none; border-top:1px solid var(--line); margin:40px 0;}
+
+  /* ===== Comments ===== */
+  .comment-section{margin-top:22px; max-width:640px;}
+  .comment-heading{font-size:1.1rem; margin-bottom:2px;}
+  .comment-sub{color:var(--ink-soft); font-size:.85rem; margin:0 0 14px;}
+  .comment-list{display:flex; flex-direction:column; gap:10px; margin-bottom:16px;}
+  .comment-item{
+    background:var(--paper); border:1px solid var(--line); border-left:3px solid var(--green);
+    border-radius:var(--radius); padding:10px 14px;
+  }
+  .comment-item .c-head{display:flex; justify-content:space-between; gap:10px; font-size:.82rem; margin-bottom:4px;}
+  .comment-item .c-name{font-weight:700; color:var(--navy-deep);}
+  .comment-item .c-time{color:var(--ink-soft);}
+  .comment-item .c-body{font-size:.92rem; color:var(--ink); margin:0; white-space:pre-wrap;}
+  .comment-empty{color:var(--ink-soft); font-size:.88rem; font-style:italic;}
+  .comment-form{display:flex; flex-direction:column; gap:8px;}
+  .comment-form input, .comment-form textarea{
+    font-family:inherit; font-size:.92rem; padding:9px 12px; border:1px solid var(--line);
+    border-radius:var(--radius); background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .comment-form input:focus, .comment-form textarea:focus{border-color:var(--green);}
+  .comment-error{color:#a3312a; font-size:.85rem; min-height:1.1em;}
+  .comment-submit{align-self:flex-start; border:none;}
 
   footer{background:var(--navy-deep); color:#c7d4e3; padding:28px 0; font-size:.85rem;}
   footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;}
@@ -381,7 +391,7 @@
     </div>
   </section>
 
-  <section id="home-quick" class="bg-blue" style="padding-top:48px;">
+  <section id="home-quick" class="bg-green" style="padding-top:48px;">
     <div class="wrap">
       <div class="quick-grid">
         <div class="quick-card">
@@ -551,7 +561,7 @@
   </section>
 
   <!-- ========== CCTV LOCATION ========== -->
-  <section id="cctv" class="bg-blue">
+  <section id="cctv" class="bg-green">
     <div class="wrap">
       <div class="section-head">
         <span class="kicker">CCTV Location</span>
@@ -582,16 +592,51 @@
       <div class="gallery-grid" id="gpedro-street-gallery">
         <!-- images injected by JS -->
       </div>
+
+      <div class="comment-section" data-comments-key="gpedro-cleaning">
+        <h3 class="comment-heading">Comments</h3>
+        <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
+        <div class="comment-list"></div>
+        <form class="comment-form" onsubmit="return false;">
+          <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
+          <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
+          <div class="comment-error" role="alert"></div>
+          <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
+        </form>
+      </div>
+
+      <hr class="section-divider" />
+
+      <div class="section-head" style="margin-top:8px;">
+        <h2>Street Drainage Declogging</h2>
+        <p>HOA officers, barangay kagawad, and the New Zaniga Fire &amp; Rescue Volunteers clearing clogged drains along G. Pedro Street.</p>
+      </div>
+      <p class="gallery-label">Drainage declogging pictures</p>
+      <div class="gallery-grid" id="drainage-gallery">
+        <!-- images injected by JS -->
+      </div>
+
+      <div class="comment-section" data-comments-key="gpedro-drainage">
+        <h3 class="comment-heading">Comments</h3>
+        <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
+        <div class="comment-list"></div>
+        <form class="comment-form" onsubmit="return false;">
+          <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
+          <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
+          <div class="comment-error" role="alert"></div>
+          <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- ========== HOA DUES ========== -->
-  <section id="hoa-dues" class="bg-blue">
+  <section id="hoa-dues" class="bg-green">
     <div class="wrap">
       <div class="section-head">
         <span class="kicker">7. HOA Dues</span>
         <h2>Member payments &amp; expenses</h2>
-        <p>Financial records for the association, drawn from the HOA's Master List and Expenses records.</p>
+        <p>Financial records for the association.</p>
       </div>
 
       <div class="year-tabs" data-group="dues">
@@ -600,133 +645,15 @@
       </div>
 
       <div class="year-panel active" data-group="dues" data-duestab="payment">
-        <p class="section-note">Monthly dues collected per household, from the "MasterList 2026" tab. Amounts shown are what was recorded paid for that month; "Free" marks a waived month, and "Complete" shows the date a homeowner finished paying for the year.</p>
-        <div class="table-scroll">
-          <table class="data-table data-table--wide" id="payment-table">
-            <thead>
-              <tr>
-                <th>Unit No.</th><th>Name</th>
-                <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th>
-                <th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
-                <th>Complete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="group-row"><td colspan="15">Homeowners</td></tr>
-              <tr><td>302</td><td>Fely Santos</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Mar 3, 2026</td></tr>
-              <tr><td>303</td><td>Joy/Jovy Santos</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Nestor Delos Santos</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>304</td><td>Maan Matubang</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td>Jan 22, 2026</td></tr>
-              <tr><td>305</td><td>Jacques Brown Santos</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>306</td><td>Robby Navarro</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Sep 3, 2026</td></tr>
-              <tr><td></td><td>Jeffrey Jardenico</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 4, 2026</td></tr>
-              <tr><td></td><td>Mako Dizon</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 22, 2026</td></tr>
-              <tr><td>309</td><td>Vinia Mendez</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Feb 8, 2026</td></tr>
-              <tr><td>311</td><td>Oj Paulino</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Ella Licuanan</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>312</td><td>Nelia Hernandez</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td></td><td>Jan 22, 2026</td></tr>
-              <tr><td>313</td><td>Doc John Cusi</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Mar 9, 2026</td></tr>
-              <tr><td>314</td><td>Roy Judan</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 22, 2026</td></tr>
-              <tr><td>315</td><td>Celia Paulino</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Feb 19, 2026</td></tr>
-              <tr><td></td><td>Ronald Famy</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 4, 2026</td></tr>
-              <tr><td>316</td><td>Al Judan</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 4, 2026</td></tr>
-              <tr><td></td><td>Romy Abobo</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>317</td><td>Franco Abella</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 5, 2026</td></tr>
-              <tr><td>318</td><td>Doc Benj Sanchez</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Feb 10, 2026</td></tr>
-              <tr><td>319</td><td>Atty Ed Abelia</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>Free</td><td>Jan 5, 2026</td></tr>
-              <tr><td>320</td><td>Christina Villegas</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td>Jan 19, 2026</td></tr>
-              <tr><td>325</td><td>Liza Anza</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td>₱300</td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>432</td><td>Lyn Pernia</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr class="total-row"><td colspan="2">Total collected — Homeowners</td><td>₱5,700</td><td>₱5,700</td><td>₱5,700</td><td>₱5,700</td><td>₱5,400</td><td>₱5,400</td><td>₱5,100</td><td>₱5,100</td><td>₱4,800</td><td>₱4,200</td><td>₱3,900</td><td>₱300</td><td></td></tr>
-              <tr class="group-row"><td colspan="15">Tenants</td></tr>
-              <tr><td>302</td><td>Jennie Chan</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Derek Mendoza</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Angie Santiago</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>303</td><td>Roland De Chavez</td><td></td><td></td><td></td><td></td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Maritess Purgatorio</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Neng Miranda</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Darren Villar</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>305</td><td>Kevin Iraci</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Mary grace Petrolla</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Cynthia Brown</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>315</td><td>Richie Santos</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Jan 24, 2026</td></tr>
-              <tr><td>432</td><td>Ruby Villa</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td></tr>
-              <tr><td></td><td>Richard Barangan</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>no</td><td>Lim, Chuang Yeh</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>no</td><td>Marvin Lee</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>no</td><td>Edna Omaga</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td></td><td>Norvin Villa</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>₱200</td><td>Free</td><td>Jan 22, 2026</td></tr>
-              <tr class="total-row"><td colspan="2">Total collected — Tenants</td><td>₱2,200</td><td>₱1,800</td><td>₱1,800</td><td>₱1,600</td><td>₱1,800</td><td>₱1,800</td><td>₱1,600</td><td>₱1,400</td><td>₱1,000</td><td>₱400</td><td>₱400</td><td>₱200</td><td></td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="placeholder-note">We are working to incorporate the payments here.</p>
       </div>
 
       <div class="year-panel" data-group="dues" data-duestab="expenses">
-        <p class="section-note">Expenses recorded per month, from the "Expenses" tab (remarks noted outside that table are not included here).</p>
-        <div class="table-scroll">
-          <table class="data-table data-table--wide" id="expenses-table">
-            <thead>
-              <tr>
-                <th>Description</th>
-                <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th>
-                <th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Peter Salary</td><td>₱2,750</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td>₱2,750</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>CCTV JM Maintenance</td><td>₱1,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Sticker Print 3pcs</td><td>₱320</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Sintra and Printing</td><td>₱2,143</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>1pc Tarp</td><td>₱108</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>4set of walkie talkie</td><td>₱1,199</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>5 pcs walis tinging</td><td>₱200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Solar 8pcs</td><td></td><td>₱10,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Tie Wrap</td><td></td><td>₱259</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Tie Wrap</td><td></td><td>₱259</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Meryenda, Pay & Wel Rod (Oni & Peter)</td><td></td><td>₱1,500</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Hapi helps</td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Walis Peter</td><td></td><td></td><td></td><td>₱40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Funeral Kuya Noli</td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Funeral asawa kuya Joji</td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Funeral Kuya Hapi</td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Walis Peter</td><td></td><td></td><td></td><td></td><td></td><td>₱50</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Mass, food, fruits, candle</td><td></td><td></td><td></td><td></td><td></td><td>₱4,406</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Mako abuno sa trimming</td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱1,000</td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Snacks with the trimming</td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱741</td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Walis Peter</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱50</td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>SubMeter</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱300</td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td></tr>
-              <tr><td>Walis Peter</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱100</td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td><td></td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td></tr>
-              <tr><td>Peter Salary</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>₱3,000</td></tr>
-              <tr class="total-row"><td>Total expenses</td><td>₱10,470</td><td>₱18,018</td><td>₱9,000</td><td>₱9,040</td><td>₱9,000</td><td>₱13,456</td><td>₱7,741</td><td>₱6,350</td><td>₱6,100</td><td>₱6,000</td><td>₱6,000</td><td>₱6,000</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="placeholder-note">We are working to incorporate the payments here.</p>
       </div>
     </div>
   </section>
+
 
   <!-- ========== ABOUT US ========== -->
   <section id="about" class="bg-gold">
@@ -764,7 +691,7 @@
   </section>
 
   <!-- ========== CONTACT US ========== -->
-  <section id="contact" class="bg-blue">
+  <section id="contact" class="bg-green">
     <div class="wrap">
       <div class="section-head">
         <span class="kicker">Contact Us</span>
@@ -905,6 +832,29 @@
   buildGallery('gpedro-gallery');
   buildGallery('gpedro-street-gallery');
 
+  // ---- Street Drainage Declogging gallery ----
+  const drainageImages = Array.from({length: 10}, (_, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return 'drainage-' + n + '.jpg';
+  });
+  function buildDrainageGallery(containerId){
+    const el = document.getElementById(containerId);
+    if(!el) return;
+    drainageImages.forEach((src, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'View drainage declogging photo ' + (idx + 1));
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'G. Pedro Street drainage declogging, photo ' + (idx + 1);
+      img.loading = 'lazy';
+      btn.appendChild(img);
+      btn.addEventListener('click', () => openLightbox(src, img.alt));
+      el.appendChild(btn);
+    });
+  }
+  buildDrainageGallery('drainage-gallery');
+
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   function openLightbox(src, alt){
@@ -915,6 +865,88 @@
   document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
   lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('open'); });
   document.addEventListener('keydown', (e) => { if(e.key === 'Escape') lightbox.classList.remove('open'); });
+
+  // ---- Comment sections: local, positive-only, moderated ----
+  // Note: comments are stored in this browser's local storage only. They are
+  // meant as a friendly guestbook-style feature for a static site; they are
+  // not shared across every visitor's device unless this site is later wired
+  // up to a real comment backend (e.g. giscus via GitHub Discussions).
+  const BLOCKED_WORDS = [
+    // English profanity / insults
+    'fuck','shit','bitch','asshole','bastard','dick','pussy','cunt','slut','whore',
+    'idiot','stupid','dumb','moron','ugly','trash','garbage','useless','loser','hate',
+    'kill','die','damn','crap','suck','sucks','worthless','pathetic','disgusting',
+    // Filipino/Tagalog profanity / insults
+    'putangina','putang ina','tangina','gago','gaga','tarantado','tanga','bobo','ulol',
+    'leche','punyeta','hayop','walang hiya','hinayupak','engot','siraulo','baliw',
+    'pakshet','peste','lintik','kupal'
+  ];
+  function containsBlockedWord(text){
+    const normalized = text.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
+    return BLOCKED_WORDS.some(word => {
+      const pattern = new RegExp('\\b' + word.replace(/\s+/g, '\\s+') + '\\b', 'i');
+      return pattern.test(normalized);
+    });
+  }
+
+  function loadComments(key){
+    try{
+      const raw = localStorage.getItem('gphoa-comments:' + key);
+      return raw ? JSON.parse(raw) : [];
+    }catch(e){ return []; }
+  }
+  function saveComments(key, list){
+    try{ localStorage.setItem('gphoa-comments:' + key, JSON.stringify(list)); }catch(e){}
+  }
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+  function renderComments(section){
+    const key = section.getAttribute('data-comments-key');
+    const list = loadComments(key);
+    const listEl = section.querySelector('.comment-list');
+    listEl.innerHTML = '';
+    if(list.length === 0){
+      listEl.innerHTML = '<p class="comment-empty">No comments yet — be the first to share some encouragement!</p>';
+      return;
+    }
+    list.slice().reverse().forEach(c => {
+      const item = document.createElement('div');
+      item.className = 'comment-item';
+      const when = new Date(c.time).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'});
+      item.innerHTML = '<div class="c-head"><span class="c-name">' + escapeHtml(c.name) + '</span><span class="c-time">' + when + '</span></div><p class="c-body">' + escapeHtml(c.text) + '</p>';
+      listEl.appendChild(item);
+    });
+  }
+  document.querySelectorAll('.comment-section').forEach(section => {
+    renderComments(section);
+    const form = section.querySelector('.comment-form');
+    const nameInput = section.querySelector('.comment-name');
+    const textInput = section.querySelector('.comment-text');
+    const errorEl = section.querySelector('.comment-error');
+    form.addEventListener('submit', () => {
+      const name = nameInput.value.trim();
+      const text = textInput.value.trim();
+      errorEl.textContent = '';
+      if(!name || !text){
+        errorEl.textContent = 'Please fill in your name and a comment.';
+        return;
+      }
+      if(containsBlockedWord(name) || containsBlockedWord(text)){
+        errorEl.textContent = "Let's keep this space positive — please remove any negative or inappropriate words and try again.";
+        return;
+      }
+      const key = section.getAttribute('data-comments-key');
+      const list = loadComments(key);
+      list.push({name, text, time: Date.now()});
+      saveComments(key, list);
+      renderComments(section);
+      nameInput.value = '';
+      textInput.value = '';
+    });
+  });
 </script>
 
 </body>
