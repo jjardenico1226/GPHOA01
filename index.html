@@ -247,6 +247,7 @@
   .contact-card a.extlink{display:inline-block; margin-top:6px; font-weight:600; font-size:.9rem;}
 
   .section-note{color:var(--ink-soft); font-size:.9rem; max-width:70ch; margin-bottom:6px;}
+  .subsection-title{font-size:1.25rem;}
   .section-divider{border:none; border-top:1px solid var(--line); margin:40px 0;}
 
   /* ===== Comments ===== */
@@ -342,7 +343,15 @@
       </div>
     </details>
 
-    <a class="toplink" href="#gpedro-street">G. Pedro Street</a>
+    <details>
+      <summary>G. Pedro Street <span class="caret">▾</span></summary>
+      <div class="dropdown">
+        <a href="#gpedro-cleaning">Street clearing &amp; cleanliness</a>
+        <a href="#gpedro-drainage">Street Drainage Declogging</a>
+        <a href="#gpedro-mass">Street Holy Mass</a>
+        <a href="#gpedro-signage">Street Signages Post</a>
+      </div>
+    </details>
 
     <details>
       <summary>HOA Dues <span class="caret">▾</span></summary>
@@ -585,50 +594,107 @@
     <div class="wrap">
       <div class="section-head">
         <span class="kicker">6. G. Pedro Street</span>
-        <h2>Street clearing &amp; cleanliness</h2>
-        <p>Photos from the tree trimming and street clearing done along G. Pedro Street, in preparation for typhoon season.</p>
-      </div>
-      <p class="gallery-label">Cleaning pictures</p>
-      <div class="gallery-grid" id="gpedro-street-gallery">
-        <!-- images injected by JS -->
+        <h2>Activities along G. Pedro Street</h2>
+        <p>A running record of clean-up, maintenance, and community activities on the street.</p>
       </div>
 
-      <div class="comment-section" data-comments-key="gpedro-cleaning">
-        <h3 class="comment-heading">Comments</h3>
-        <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
-        <div class="comment-list"></div>
-        <form class="comment-form" onsubmit="return false;">
-          <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
-          <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
-          <div class="comment-error" role="alert"></div>
-          <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
-        </form>
+      <div id="gpedro-cleaning">
+        <div class="section-head" style="margin-top:8px;">
+          <h3 class="subsection-title">Street clearing &amp; cleanliness</h3>
+          <p>Photos from the tree trimming and street clearing done along G. Pedro Street, in preparation for typhoon season.</p>
+        </div>
+        <p class="gallery-label">Cleaning pictures</p>
+        <div class="gallery-grid" id="gpedro-street-gallery">
+          <!-- images injected by JS -->
+        </div>
+
+        <div class="comment-section" data-comments-key="gpedro-cleaning">
+          <h3 class="comment-heading">Comments</h3>
+          <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
+          <div class="comment-list"></div>
+          <form class="comment-form" onsubmit="return false;">
+            <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
+            <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
+            <div class="comment-error" role="alert"></div>
+            <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
+          </form>
+        </div>
       </div>
 
       <hr class="section-divider" />
 
-      <div class="section-head" style="margin-top:8px;">
-        <h2>Street Drainage Declogging</h2>
-        <p>HOA officers, barangay kagawad, and the New Zaniga Fire &amp; Rescue Volunteers clearing clogged drains along G. Pedro Street.</p>
-      </div>
-      <p class="gallery-label">Drainage declogging pictures</p>
-      <div class="gallery-grid" id="drainage-gallery">
-        <!-- images injected by JS -->
+      <div id="gpedro-drainage">
+        <div class="section-head" style="margin-top:8px;">
+          <h3 class="subsection-title">Street Drainage Declogging</h3>
+          <p>HOA officers, barangay kagawad, and the New Zaniga Fire &amp; Rescue Volunteers clearing clogged drains along G. Pedro Street.</p>
+        </div>
+        <p class="gallery-label">Drainage declogging pictures</p>
+        <div class="gallery-grid" id="drainage-gallery">
+          <!-- images injected by JS -->
+        </div>
+
+        <div class="comment-section" data-comments-key="gpedro-drainage">
+          <h3 class="comment-heading">Comments</h3>
+          <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
+          <div class="comment-list"></div>
+          <form class="comment-form" onsubmit="return false;">
+            <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
+            <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
+            <div class="comment-error" role="alert"></div>
+            <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
+          </form>
+        </div>
       </div>
 
-      <div class="comment-section" data-comments-key="gpedro-drainage">
-        <h3 class="comment-heading">Comments</h3>
-        <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
-        <div class="comment-list"></div>
-        <form class="comment-form" onsubmit="return false;">
-          <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
-          <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
-          <div class="comment-error" role="alert"></div>
-          <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
-        </form>
+      <hr class="section-divider" />
+
+      <div id="gpedro-mass">
+        <div class="section-head" style="margin-top:8px;">
+          <h3 class="subsection-title">Street Holy Mass</h3>
+          <p>An open-air Holy Mass held along G. Pedro Street, headed by Priest Aries with Barangay Captain Liza Cruz.</p>
+        </div>
+        <p class="gallery-label">Holy Mass pictures</p>
+        <div class="gallery-grid" id="mass-gallery">
+          <!-- images injected by JS -->
+        </div>
+
+        <div class="comment-section" data-comments-key="gpedro-mass">
+          <h3 class="comment-heading">Comments</h3>
+          <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
+          <div class="comment-list"></div>
+          <form class="comment-form" onsubmit="return false;">
+            <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
+            <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
+            <div class="comment-error" role="alert"></div>
+            <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
+          </form>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <div id="gpedro-signage">
+        <div class="section-head" style="margin-top:8px;">
+          <h3 class="subsection-title">Street Signages Post</h3>
+          <p>Signages installed along G. Pedro Street: CCTV Monitoring, Proper Garbage Disposal, and Dog Waste Responsibility.</p>
+        </div>
+        <p class="placeholder-note">Photos of the installed signages will be added here soon.</p>
+
+        <div class="comment-section" data-comments-key="gpedro-signage">
+          <h3 class="comment-heading">Comments</h3>
+          <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
+          <div class="comment-list"></div>
+          <form class="comment-form" onsubmit="return false;">
+            <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
+            <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
+            <div class="comment-error" role="alert"></div>
+            <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- ========== HOA DUES ========== -->
   <section id="hoa-dues" class="bg-green">
@@ -854,6 +920,29 @@
     });
   }
   buildDrainageGallery('drainage-gallery');
+
+  // ---- Street Holy Mass gallery ----
+  const massImages = Array.from({length: 6}, (_, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return 'mass-' + n + '.jpg';
+  });
+  function buildMassGallery(containerId){
+    const el = document.getElementById(containerId);
+    if(!el) return;
+    massImages.forEach((src, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'View Street Holy Mass photo ' + (idx + 1));
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'G. Pedro Street Holy Mass, photo ' + (idx + 1);
+      img.loading = 'lazy';
+      btn.appendChild(img);
+      btn.addEventListener('click', () => openLightbox(src, img.alt));
+      el.appendChild(btn);
+    });
+  }
+  buildMassGallery('mass-gallery');
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
