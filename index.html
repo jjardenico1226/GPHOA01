@@ -11,17 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#1c3a5e;
-    --navy-deep:#122840;
-    --green:#2e6b3e;
-    --green-deep:#204c2c;
+    --navy:#1f4d3a;
+    --navy-deep:#143328;
+    --green:#3f8a52;
+    --green-deep:#2c6b3d;
     --gold:#c9a227;
-    --cream:#eaf6ec;
+    --cream:#eafbf1;
     --gold-tint:#fdf3d6;
     --paper:#ffffff;
     --ink:#20261f;
     --ink-soft:#4b5650;
-    --line:#e2ded2;
+    --line:#dde8de;
     --radius:4px;
     --maxw:1120px;
   }
@@ -350,6 +350,7 @@
         <a href="#gpedro-drainage">Street Drainage Declogging</a>
         <a href="#gpedro-mass">Street Holy Mass</a>
         <a href="#gpedro-signage">Street Signages Post</a>
+        <a href="#gpedro-solar">Street Solar Panel Installation</a>
       </div>
     </details>
 
@@ -538,10 +539,12 @@
                   <ul>
                     <li>Location: G. Pedro Street</li>
                   </ul>
-                  <p class="gallery-label">Cleaning pictures</p>
-                  <div class="gallery-grid" id="gpedro-gallery">
-                    <!-- images injected by JS -->
-                  </div>
+                </div>
+                <div class="proj-item">
+                  <span class="proj-title">3. Street Holy Mass Gathering</span>
+                  <ul>
+                    <li>Headed by Priest Aries, with Barangay Captain Liza Cruz</li>
+                  </ul>
                 </div>
               </div>
             </details>
@@ -678,9 +681,37 @@
           <h3 class="subsection-title">Street Signages Post</h3>
           <p>Signages installed along G. Pedro Street: CCTV Monitoring, Proper Garbage Disposal, and Dog Waste Responsibility.</p>
         </div>
-        <p class="placeholder-note">Photos of the installed signages will be added here soon.</p>
+        <p class="gallery-label">Signage pictures</p>
+        <div class="gallery-grid" id="signage-gallery">
+          <!-- images injected by JS -->
+        </div>
 
         <div class="comment-section" data-comments-key="gpedro-signage">
+          <h3 class="comment-heading">Comments</h3>
+          <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
+          <div class="comment-list"></div>
+          <form class="comment-form" onsubmit="return false;">
+            <input type="text" class="comment-name" placeholder="Your name" maxlength="60" required />
+            <textarea class="comment-text" placeholder="Write something nice..." maxlength="400" rows="3" required></textarea>
+            <div class="comment-error" role="alert"></div>
+            <button type="submit" class="btn btn-gold comment-submit">Post comment</button>
+          </form>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <div id="gpedro-solar">
+        <div class="section-head" style="margin-top:8px;">
+          <h3 class="subsection-title">Street Solar Panel Installation</h3>
+          <p>Solar-powered street lamps installed along G. Pedro Street to improve nighttime visibility and safety.</p>
+        </div>
+        <p class="gallery-label">Solar panel installation pictures</p>
+        <div class="gallery-grid" id="solar-gallery">
+          <!-- images injected by JS -->
+        </div>
+
+        <div class="comment-section" data-comments-key="gpedro-solar">
           <h3 class="comment-heading">Comments</h3>
           <p class="comment-sub">Leave a kind word or a shout-out for the volunteers — let's keep it positive.</p>
           <div class="comment-list"></div>
@@ -895,7 +926,6 @@
       el.appendChild(btn);
     });
   }
-  buildGallery('gpedro-gallery');
   buildGallery('gpedro-street-gallery');
 
   // ---- Street Drainage Declogging gallery ----
@@ -943,6 +973,52 @@
     });
   }
   buildMassGallery('mass-gallery');
+
+  // ---- Street Signages Post gallery ----
+  const signageImages = Array.from({length: 14}, (_, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return 'signage-' + n + '.jpg';
+  });
+  function buildSignageGallery(containerId){
+    const el = document.getElementById(containerId);
+    if(!el) return;
+    signageImages.forEach((src, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'View signage photo ' + (idx + 1));
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'G. Pedro Street signage, photo ' + (idx + 1);
+      img.loading = 'lazy';
+      btn.appendChild(img);
+      btn.addEventListener('click', () => openLightbox(src, img.alt));
+      el.appendChild(btn);
+    });
+  }
+  buildSignageGallery('signage-gallery');
+
+  // ---- Street Solar Panel Installation gallery ----
+  const solarImages = Array.from({length: 5}, (_, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return 'solar-' + n + '.jpg';
+  });
+  function buildSolarGallery(containerId){
+    const el = document.getElementById(containerId);
+    if(!el) return;
+    solarImages.forEach((src, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'View solar panel installation photo ' + (idx + 1));
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'G. Pedro Street solar panel installation, photo ' + (idx + 1);
+      img.loading = 'lazy';
+      btn.appendChild(img);
+      btn.addEventListener('click', () => openLightbox(src, img.alt));
+      el.appendChild(btn);
+    });
+  }
+  buildSolarGallery('solar-gallery');
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
